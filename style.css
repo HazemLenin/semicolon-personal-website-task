@@ -2006,6 +2006,11 @@ html, * {
   background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
+.bg-muted {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(168 85 247 / var(--tw-bg-opacity));
@@ -2034,11 +2039,6 @@ html, * {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-muted {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -2742,6 +2742,46 @@ html, * {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
+.before\:bg-gradient-to-r::before {
+  content: var(--tw-content);
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.before\:bg-gradient-to-tr::before {
+  content: var(--tw-content);
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
+.before\:from-primary::before {
+  content: var(--tw-content);
+  --tw-gradient-from: #a855f7 var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(168 85 247 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.before\:from-dark::before {
+  content: var(--tw-content);
+  --tw-gradient-from: #1e293b var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(30 41 59 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.before\:to-dark::before {
+  content: var(--tw-content);
+  --tw-gradient-to: #1e293b var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
+}
+
+.before\:to-primary::before {
+  content: var(--tw-content);
+  --tw-gradient-to: #a855f7 var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
+}
+
 .before\:opacity-50::before {
   content: var(--tw-content);
   opacity: 0.5;
@@ -2847,20 +2887,12 @@ html, * {
 }
 
 @media (min-width: 768px) {
-  .md\:h-80 {
-    height: 20rem;
-  }
-
-  .md\:h-full {
-    height: 100%;
-  }
-
-  .md\:h-2\/3 {
-    height: 66.666667%;
-  }
-
   .md\:h-3\/4 {
     height: 75%;
+  }
+
+  .md\:h-80 {
+    height: 20rem;
   }
 
   .md\:w-80 {
