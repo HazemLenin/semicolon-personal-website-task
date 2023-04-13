@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Hello I'm Hazem Lenin a web developer" />
+		<meta name="theme-color" content="#a855f7" />
+		<title>Hazem Lenin</title>
+
+		<!-- Tailwind style -->
+		<link rel="stylesheet" href="style.css" />
+
+		<!-- Fontawesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- AOS -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+		<!-- JQuery -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.4.min.js"
+			integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Slick -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+		/>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
+
+		<script src="script.js" defer></script>
+	</head>
+	<body class="dark:bg-dark">
+		<style>
+			.carousel .slick-list {
+				overflow-y: visible;
+			}
+
+			.slick-center .project {
+				transform: scale(1.2);
+			}
+		</style>
+		<!-- Color pallete -->
+		<!-- <div class="grid grid-cols-5 w-full">
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-primary"
+			>
+				primary
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-primary-dark"
+			>
+				primary dark
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-secondary"
+			>
+				secondary
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-secondary-dark"
+			>
+				secondary dark
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-facebook"
+			>
+				facebook
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-instagram"
+			>
+				instagram
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-dotnet"
+			>
+				dotnet
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-dark"
+			>
+				dark
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-whatsapp"
+			>
+				whatsapp
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-linkedin"
+			>
+				linkedin
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-github"
+			>
+				github
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-gmail"
+			>
+				gmail
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-white"
+			>
+				white
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-black"
+			>
+				black
+			</div>
+			<div
+				class="flex justify-center items-center w-full h-24 text-white bg-muted"
+			>
+				muted
+			</div>
+		</div> -->
+
+		<!-- NAVBAR START -->
+		<header>
+			<nav class="w-full h-20 bg-white dark:bg-dark flex justify-between">
+				<ul>
+					<li class="nav-item">
+						<a href="#hero" class="text-2xl font-semibold">Hazem</a>
+					</li>
+				</ul>
+				<ul class="flex">
+					<li class="nav-item">
+						<button id="theme-btn">
+							<i id="sun-icon" class="fa-solid fa-sun !hidden"></i>
+							<i id="moon-icon" class="fa-solid fa-moon !hidden"></i>
+						</button>
+					</li>
+					<li class="nav-item">
+						<a href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a href="#projects">Projects</a>
+					</li>
+					<li class="nav-item">
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- NAVBAR END -->
+
+		<main>
+			<!-- HERO START -->
+			<section class="relative" id="hero">
+				<video
+					class="-z-20 w-screen"
+					src="./videos/Keyboard Typing Stock Footage.mp4"
+					autoplay
+					loop
+					muted
+				></video>
+				<div
+					class="absolute top-0 left-0 flex flex-col justify-center items-center gap-5 w-full h-full before:content-[''] before:block before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-dark before:opacity-50 before:-z-10 z-0"
+				>
+					<h1 class="text-4xl text-white md:text-6xl" data-aos="fade-up">
+						Hazem Lenin
+					</h1>
+					<h2
+						class="text-3xl text-white md:text-5xl after:content-[''] after:inline-block after:w-1 after:h-full after:bg-primary"
+						data-aos="fade-up"
+						data-aos-delay="250"
+						id="typing"
+					></h2>
+					<a href="#contact" class="btn btn-primary">Contact Me</a>
+				</div>
+			</section>
+			<!-- HERO END -->
+
+			<!-- ABOUT START -->
+			<section class="flex flex-col md:flex-row p-10 md:p-20 gap-10" id="about">
+				<div>
+					<h1 class="text-4xl">About</h1>
+					<p class="md:text-lg">
+						Hello, I am <span class="text-primary">Hazem</span>, web developer.
+						I can make edit and make your website modern or even create a new
+						one for you. I mainly use
+						<span class="text-dotnet">ASP.NET</span> for back-end and
+						<span class="text-react">ReactJS</span> for front-end.
+					</p>
+				</div>
+				<div class="flex justify-center items-center" id="about">
+					<div
+						class="relative bg-primary w-60 h-60 md:w-80 md:h-80"
+						data-aos="fade-up"
+					>
+						<img
+							src="./images/profilePicture.jpg"
+							alt="profilePicture"
+							class="absolute -top-3 -left-3 block w-60 h-60 md:w-80 md:h-80"
+						/>
+					</div>
+				</div>
+			</section>
+			<!-- ABOUT END -->
+
+			<!-- PROJECTS START -->
+			<section id="projects" class="relative py-10 bg-dark">
+				<h1 class="text-4xl text-center text-white">Projects</h1>
+				<button
+					id="prev-btn"
+					type="button"
+					class="absolute top-1/2 -translate-y-1/2 left-0 w-20 h-20 md:h-3/4 bg-primary hover:bg-primary-dark text=white transition-colors z-10"
+				>
+					<i class="fa-solid fa-chevron-left"></i>
+				</button>
+				<div class="my-10 carousel">
+					<div>
+						<figure class="project">
+							<img
+								src="./images/company-attendance-screenshot.jpg"
+								alt="Company attendance screenshot"
+							/>
+							<figcaption>
+								<h3>Company Attendance</h3>
+								<p>
+									Company Attendance is an application made with Django and
+									ReactJS for companies to record their employees attending
+									hours.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://company-attendance.herokuapp.com/"
+									target="_blank"
+									>Go To Website</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<figure class="project">
+							<img
+								src="./images/candica-screenshot.jpg"
+								alt="Company attendance screenshot"
+							/>
+							<figcaption>
+								<h3>Candica</h3>
+								<p>
+									Landing page for candy shop called Candica with 8-bit theme.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://hazemlenin.github.io/candica"
+									target="_blank"
+									>Go To Website</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<figure class="project">
+							<img
+								src="./images/rails-books-screenshot.jpg"
+								alt="Rails books screenshot"
+							/>
+							<figcaption>
+								<h3>Rails Books</h3>
+								<p>
+									Rails Books is an book club made with ruby on rails and
+									tailwind which readers can mark which books they had read and
+									write reviews about them.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://rails--books.herokuapp.com/"
+									target="_blank"
+									>Go To Website</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<figure class="project">
+							<img
+								src="./images/huddle-screenshot.jpg"
+								alt="huddle screenshot"
+							/>
+							<figcaption>
+								<h3>Huddle Landing Page</h3>
+								<p>
+									Huddle landing page is a challenge on Frontend mentor website,
+									which is a website for front end developers to work on their
+									skills and perform better in real world front end projects.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://hazemlenin.github.io/huddle-landing-page-with-curved-sections-solution/"
+									target="_blank"
+									>Go To Website</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<figure class="project">
+							<img
+								src="./images/daily-cafe-screenshot.jpg"
+								alt="huddle screenshot"
+							/>
+							<figcaption>
+								<h3>Daily Café Landing Page</h3>
+								<p>
+									Landing page made with HTML and SCSS with animations and
+									sliders.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://hazemlenin.github.io/daily-cafe/"
+									target="_blank"
+									>Go To Website</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<figure class="project">
+							<img
+								src="./images/sunnyside-screenshot.jpg"
+								alt="QR code component screenshot"
+							/>
+							<figcaption>
+								<h3>Sunnyside Landing Page</h3>
+								<p>
+									Sunnyside Landing Page is a challenge on Frontend mentor
+									website, which is a website for front end developers to work
+									on their skills and perform better in real world front end
+									projects.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://hazemlenin.github.io/sunnyside-agency-landing-page-solution/"
+									target="_blank"
+									>Go To Website</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<figure class="project">
+							<img
+								src="./images/aurora-screenshot.jpg"
+								alt="Aurora screenshot"
+							/>
+							<figcaption>
+								<h3>Aurora E-commerce Web Site</h3>
+								<p>
+									Aurora is an e-commerce web site made with Django and ReactJS
+									for hoodies, jeans and perfumes.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://aurora-ecommerce.herokuapp.com/"
+									target="_blank"
+									>Go To Website</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<figure class="project">
+							<img src="./images/grape-screenshot.jpg" alt="Grape screenshot" />
+							<figcaption>
+								<h3>Grape Chat App</h3>
+								<p>
+									Grape is an under development chat app made with Django and
+									tailwind for people who want to share their stories and
+									contact each other.
+								</p>
+								<a
+									class="btn btn-primary"
+									href="https://github.com/HazemLenin/grape-chat-app/"
+									target="_blank"
+									>Go To Repo</a
+								>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<button
+					id="next-btn"
+					type="button"
+					class="absolute top-1/2 -translate-y-1/2 right-0 w-20 h-20 md:h-3/4 bg-primary hover:bg-primary-dark text=white transition-colors z-10"
+				>
+					<i class="fa-solid fa-chevron-right"></i>
+				</button>
+			</section>
+			<!-- PROJECTS END -->
+		</main>
+		<footer class="flex flex-col items-center gap-10 p-10" id="contact">
+			<h1 class="text-4xl">Let's get in touch</h1>
+			<div class="flex justify-center gap-8 md:gap-16">
+				<a
+					href="https://www.facebook.com/people/Hazem-Lenin/100009117039974/"
+					target="_blank"
+					class="social hover:text-facebook"
+					aria-label="facebook account"
+				>
+					<i class="fab fa-facebook-f text-center"></i>
+				</a>
+				<a
+					href="https://www.instagram.com/hazemlenin/"
+					target="_blank"
+					class="social hover:text-instagram"
+					aria-label="instagram account"
+				>
+					<i class="fab fa-instagram text-center"></i>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/hazem-lenin-3aa06a227/"
+					target="_blank"
+					class="social hover:text-linkedin"
+					aria-label="linkedin account"
+				>
+					<i class="fa-brands fa-linkedin-in text-center"></i>
+				</a>
+				<a
+					href="https://github.com/HazemLenin/"
+					target="_blank"
+					class="social hover:text-github"
+					aria-label="github account"
+				>
+					<i class="fab fa-github text-center"></i>
+				</a>
+				<a
+					href="https://api.whatsapp.com/send?phone=01002353194"
+					id="number"
+					class="social hover:text-whatsapp"
+					aria-label="whatsapp number"
+				>
+					<i class="fab fa-whatsapp text-center"></i>
+				</a>
+				<a
+					href="mailto:hazemlenin@gmail.com"
+					target="_blank"
+					class="social hover:text-gmail"
+					aria-label="gmail"
+				>
+					<i class="far fa-envelope text-center"></i>
+				</a>
+			</div>
+			<span class="text-muted">Hazem Lenin 2023&copy;</span>
+		</footer>
+	</body>
+</html>
