@@ -26,4 +26,4 @@ Slick is a JQuery plugin that makes making slider easier.
 Fontawesome is icons library that I used to provide me with icons.
 
 ### AOS
-AOS is JS library to make animations on scroll by just add attributes to elements that I want to animate on scroll
+AOS is JS library to make animations on scroll by just add attributes to elements that I want to animate on scroll.
