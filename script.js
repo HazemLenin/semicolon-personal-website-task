@@ -33,7 +33,7 @@ function checkTheme() {
 checkTheme();
 
 themeBtn.addEventListener("click", () => {
-    // if sun is hidden (user pressed on moon )
+    // If sun is hidden (user pressed on moon )
     if (sunIcon.classList.contains('!hidden')) {
         localStorage.theme = 'dark';
     }
@@ -55,43 +55,58 @@ let skills = [
     "Marvel fan"
 ];
 
-let skillsIndex = 0; // which word we are in now
-// let blink = true; // it's now in scss and later I will make cursor blinks on finishing typing a word
-let i = 0; // which letter we are in now
-let speed = 100; // typing speed (delay between letters)
-let delay = 2000;
+let skillsIndex = 0; // Which word we are in now
+let letterIndex = 0; // Which letter we are in now
+let letterDelay = 100;
+let wordDelay = 2000;
 
-// type word letters
-function typeWord() {
-    if (i < skills[skillsIndex].length) {
-        typing.innerText += skills[skillsIndex].charAt(i);
-        i++;
-        // calls itself after milliseconds to type next letter
-        setTimeout(() => typeWord(), speed);
-    } else {// when word is completed, start deleting it after 2 sec
-        setTimeout(() => deleteWord(), delay);
-    }
-}
+// Type word letters (in recursion)
+function typeLetter() {
+    // We didn't reach the end of the current skill
+    if (letterIndex < skills[skillsIndex].length) {
+        // Add letter
+        typing.innerText += skills[skillsIndex].charAt(letterIndex);
+        letterIndex++;
 
-function deleteWord() {
-    if (i >= 0) {
-        // deletes last character
-        typing.innerText = typing.innerText.replace(/(\s+)?.$/, '');
-        i--;
-        // calls itself after milliseconds to delete previous letter
-        setTimeout(() => deleteWord(skills[skillsIndex]), speed);
+        // Calls itself after milliseconds to type the next letter
+        setTimeout(() => typeLetter(), letterDelay);
+
     } else {
-        i = 0;
-        // is word finished ? start from first letter : move to next letter
+        // When word is completed, start deleting it
+        setTimeout(() => deleteLetter(), wordDelay);
+    }
+}
+
+
+// It also uses recursion concept
+function deleteLetter() {
+    // We didn't delete the first letter of current skill
+    if (letterIndex >= 0) {
+        // Delete last character
+        typing.innerText = typing.innerText.replace(/(\s+)?.$/, '');
+        letterIndex--;
+        // Calls itself after milliseconds to delete previous letter
+        setTimeout(() => deleteLetter(skills[skillsIndex]), letterDelay);
+    } else {
+        // We now deleted the first letter
+        
+        // Set our letter index to zero
+        letterIndex = 0;
+
+        // Move to the next skill
         skillsIndex++;
+
+        // Take the remainder in condition the skills index is more that the skills length
         skillsIndex %= skills.length;
-        typeWord();
+
+        // Type the next word
+        typeLetter();
     }
 
 }
 
-// start recursioning
-typeWord();
+// Start recursioning
+typeLetter();
 
 // Carousel
 $('.carousel').slick({
@@ -103,4 +118,4 @@ $('.carousel').slick({
     variableWidth: true,
     prevArrow: $('#prev-btn'),
     nextArrow: $('#next-btn')
-  });
+});
