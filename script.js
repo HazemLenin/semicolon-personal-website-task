@@ -44,10 +44,78 @@ themeBtn.addEventListener("click", () => {
     checkTheme();
 });
 
-// Typing effect
+// // Typing effect
+// let typing = document.getElementById("typing");
+// let cursor = document.getElementById("cursor");
+// let txt = typing.innerText;
+// let skills = [
+//     "Web Developer",
+//     "LOL Gamer",
+//     "Rock fan",
+//     "Marvel fan"
+// ];
+
+// let skillsIndex = 0; // Which word we are in now
+// let letterIndex = 0; // Which letter we are in now
+// let letterDelay = 100;
+// let wordDelay = 2000;
+
+// // Type word letters (in recursion)
+// function typeLetter() {
+//     // We didn't reach the end of the current skill
+//     if (letterIndex < skills[skillsIndex].length) {
+//         // Add letter
+//         typing.innerText += skills[skillsIndex].charAt(letterIndex);
+//         letterIndex++;
+
+//         // Calls itself after milliseconds to type the next letter
+//         setTimeout(() => typeLetter(), letterDelay);
+
+//     } else {
+//         // When word is completed, start deleting it
+//         setTimeout(() => deleteLetter(), wordDelay);
+//     }
+// }
+
+
+// // It also uses recursion concept
+// function deleteLetter() {
+//     // We didn't delete the first letter of current skill
+//     if (letterIndex >= 0) {
+//         // Delete last character
+//         typing.innerText = typing.innerText.replace(/(\s+)?.$/, '');
+//         letterIndex--;
+//         // Calls itself after milliseconds to delete previous letter
+//         setTimeout(() => deleteLetter(skills[skillsIndex]), letterDelay);
+//     } else {
+//         // We now deleted the first letter
+        
+//         // Set our letter index to zero
+//         letterIndex = 0;
+
+//         // Move to the next skill
+//         skillsIndex++;
+
+//         // Take the remainder in condition the skills index is more that the skills length
+//         skillsIndex %= skills.length;
+
+//         // Type the next word
+//         typeLetter();
+//     }
+
+// }
+
+// // Start recursioning
+// typeLetter();
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Typing effect (simple approach)
 let typing = document.getElementById("typing");
-let cursor = document.getElementById("cursor");
-let txt = typing.innerText;
+let letterDelay = 100;
+let wordDelay = 2000;
 let skills = [
     "Web Developer",
     "LOL Gamer",
@@ -55,58 +123,35 @@ let skills = [
     "Marvel fan"
 ];
 
-let skillsIndex = 0; // Which word we are in now
-let letterIndex = 0; // Which letter we are in now
-let letterDelay = 100;
-let wordDelay = 2000;
-
-// Type word letters (in recursion)
-function typeLetter() {
-    // We didn't reach the end of the current skill
-    if (letterIndex < skills[skillsIndex].length) {
-        // Add letter
-        typing.innerText += skills[skillsIndex].charAt(letterIndex);
-        letterIndex++;
-
-        // Calls itself after milliseconds to type the next letter
-        setTimeout(() => typeLetter(), letterDelay);
-
-    } else {
-        // When word is completed, start deleting it
-        setTimeout(() => deleteLetter(), wordDelay);
+// We want an infinite animation
+async function type() {
+    while (true) {
+        // Go through skills
+        for (let skill of skills) {
+            await typeSkill(skill);
+            await sleep(wordDelay);
+            await deleteSkill(skill);
+        }
     }
 }
 
-
-// It also uses recursion concept
-function deleteLetter() {
-    // We didn't delete the first letter of current skill
-    if (letterIndex >= 0) {
-        // Delete last character
-        typing.innerText = typing.innerText.replace(/(\s+)?.$/, '');
-        letterIndex--;
-        // Calls itself after milliseconds to delete previous letter
-        setTimeout(() => deleteLetter(skills[skillsIndex]), letterDelay);
-    } else {
-        // We now deleted the first letter
-        
-        // Set our letter index to zero
-        letterIndex = 0;
-
-        // Move to the next skill
-        skillsIndex++;
-
-        // Take the remainder in condition the skills index is more that the skills length
-        skillsIndex %= skills.length;
-
-        // Type the next word
-        typeLetter();
+async function typeSkill(skill) {
+    for (let char of skill) {
+        typing.innerHTML += char;
+        console.log(typing.innerHTML);
+        await sleep(letterDelay);
     }
-
 }
 
-// Start recursioning
-typeLetter();
+async function deleteSkill(skill) {
+    for (let char of skill) {
+        typing.innerHTML = typing.innerHTML.slice(0, -1);
+        console.log(typing.innerHTML);
+        await sleep(letterDelay);
+    }
+}
+
+type();
 
 // Carousel
 $('.carousel').slick({
