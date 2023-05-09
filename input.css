@@ -3,70 +3,71 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
-    }
-    html, * {
-        @apply text-dark dark:text-white;
-    }
+	html {
+		scroll-behavior: smooth;
+	}
+	html,
+	* {
+		@apply text-dark dark:text-white;
+	}
 
-    ::selection {
-        @apply bg-primary;
-    }
+	::selection {
+		@apply bg-primary;
+	}
 }
 @layer components {
-    .nav-item {
-        @apply h-full flex justify-center items-center hover:bg-primary transition-colors hover:text-white;
-    }
+	.nav-item {
+		@apply h-full flex justify-center items-center hover:bg-primary transition-colors hover:text-white;
+	}
 
-    .nav-item a,
-    .nav-item button {
-        @apply flex justify-center items-center w-full h-full px-5;
-    }
+	.nav-item a,
+	.nav-item button {
+		@apply flex justify-center items-center w-full h-full px-5;
+	}
 
-    .btn {
-        @apply flex justify-center items-center w-32 h-14 transition-colors md:text-lg;
-    }
+	.btn {
+		@apply flex justify-center items-center w-32 h-14 transition-colors md:text-lg;
+	}
 
-    .btn.btn-primary {
-        @apply bg-primary hover:bg-primary-dark text-white;
-    }
+	.btn.btn-primary {
+		@apply bg-primary hover:bg-primary-dark text-white;
+	}
 
-    #typing::after {
-        animation: blink infinite 1s;
-    }
+	#typing::after {
+		animation: blink infinite 1s;
+	}
 
-    .social {
-        @apply text-4xl cursor-pointer translate-y-2 hover:translate-y-0 transition-all;
-    }
+	.social {
+		@apply text-4xl cursor-pointer translate-y-2 hover:translate-y-0 transition-all;
+	}
 
-    .social-footer {
-        @apply text-2xl cursor-pointer translate-y-2 hover:translate-y-0 transition-all;
-    }
+	.social-footer {
+		@apply text-2xl cursor-pointer translate-y-2 hover:translate-y-0 transition-all;
+	}
 
-    .project {
-        @apply relative flex flex-col w-screen md:w-96 md:h-52 bg-white transition-all duration-300 mx-16 overflow-hidden;
-    }
+	.project {
+		@apply relative flex flex-col w-screen md:w-96 md:h-52 bg-white transition-all duration-300 mx-16 overflow-hidden;
+	}
 
-    .project * {
-        @apply text-dark;
-    }
+	.project * {
+		@apply text-dark;
+	}
 
-    .project figcaption { 
-        @apply flex flex-col justify-between items-center opacity-100 p-5 bg-white md:absolute md:top-0 md:left-0 md:h-full md:opacity-0 hover:opacity-100 md:transition-opacity;
-    }
+	.project figcaption {
+		@apply flex flex-col justify-between items-center opacity-100 p-5 bg-white md:absolute md:top-0 md:left-0 md:h-full md:opacity-0 hover:opacity-100 md:transition-opacity;
+	}
 
-    .project figcaption h3 {
-        @apply text-2xl;
-    }
+	.project figcaption h3 {
+		@apply text-2xl;
+	}
 
-    .project figcaption p {
-        @apply text-sm;
-    }
+	.project figcaption p {
+		@apply text-sm;
+	}
 }
 
 @keyframes blink {
-    50% {
-        @apply opacity-0;
-    }
+	50% {
+		@apply opacity-0;
+	}
 }

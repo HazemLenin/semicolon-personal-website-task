@@ -40,11 +40,11 @@ checkTheme();
 // Change icon
 
 themeBtn.addEventListener("click", () => {
-	// If sun is hidden (user pressed on moon )
-	if (sunIcon.classList.contains("!hidden")) {
-		localStorage.theme = "dark";
-	} else {
+	// If page is in dark mode
+	if (document.documentElement.classList.contains("dark")) {
 		localStorage.theme = "light";
+	} else {
+		localStorage.theme = "dark";
 	}
 
 	checkTheme();
@@ -96,7 +96,6 @@ type();
 $(".carousel").slick({
 	dots: false,
 	infinite: true,
-	accessibility: false,
 	mobileFirst: true,
 	centerMode: true,
 	variableWidth: true,
